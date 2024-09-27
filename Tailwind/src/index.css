@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.heading-btn {
+    @apply bg-teal-600 py-3 px-7 rounded-full text-white;
+}
+.heading{
+    @apply pt-3 text-center text-6xl font-bold mb-4 leading-tight;
+}
+.heading-p{
+    @apply text-center text-gray-600;
+}
+.title-btn{
+    @apply inline-block justify-center items-center md:py-3 px-3 md:px-6 rounded-full border bg-teal-600 text-white;
+}
+.title-heading{
+    @apply text-black text-6xl pt-4 font-['Outfit'] font-bold;
+}
+.title-p{
+    @apply font-['Outfit'] text-base text-[#3B4A46];
+}
+.box-hover{
+    @apply hover:bg-yellow-500 hover:border-black duration-500;
+}
+.section-bg{
+     @apply  bg-[#EAFAF8];
+}
+.banner-section{
+    @apply text-[#005151] text-xl font-semibold;
+}

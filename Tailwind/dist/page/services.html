@@ -1,0 +1,966 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accupay-Accounting and playroll</title>
+    <!-- aos-animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- favicon-icon -->
+    <link rel="shortcut icon" href="../img/header/favicon.png">
+    <!-- style-css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    .container {
+        max-width: 1296px;
+    }
+</style>
+ <!-- scroll-bar -->
+ <style>
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #d6d6d6b3;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #E9A114;
+    }
+</style>
+<style>
+    header{
+        width: 100%;
+        padding: 20px 0px;
+        cursor: pointer;
+    }
+    .header.fixed-header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        z-index: 999;
+        transition: 0.2s linear;
+        box-shadow: 0px 5px 40px #d1d1d18f;
+    }
+    .up-button{
+        width: 50px;
+        height: 50px;
+        background-color:#18938A ;
+        border-radius: 50%;
+        bottom: 20px;
+        position: fixed;
+        right: 50px;
+        z-index: 999;
+    }
+    .up-button a svg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        margin: 15px 15px;
+
+    }
+</style>
+<body>
+    <!-- back-to-top -->
+    <div class="up-button">
+        <a href="#">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg>
+        </a>
+    </div>
+    <header class="absolute w-full top-0 left-0 header" style="z-index: 999;">
+        <div class="container mx-auto">
+            <div class="row flex items-center">
+                <div class="w-40 py-6">
+                    <img src="../img/header/logo.png">
+                </div>
+                <nav class="mx-auto">
+                    <ul class="flex text-[#005151]">
+                        <li class="flex items-center p-3">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">Services</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3  ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 160px; height: 245px;">
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./services.html" class="text-sm text-white hover:text-yellow-500 duration-500">All Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./account-service.html" class="text-sm text-white hover:text-yellow-500 duration-500">Account-Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./payroll-process.html" class="text-sm text-white hover:text-yellow-500 duration-500">Payroll-Process</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./healthcare.html" class="text-sm text-white hover:text-yellow-500 duration-500">Healthcare Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./dentist.html" class="text-sm text-white hover:text-yellow-500 duration-500">Dentist</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./real-state-service.html" class="text-sm text-white hover:text-yellow-500 duration-500">Real-State Service</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">Shop</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3  ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 140px; height: 100px;">
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./shop.html" class="text-sm text-white hover:text-yellow-500 duration-500">Shop Page</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./cart.html" class="text-sm text-white hover:text-yellow-500 duration-500">Cart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-center p-3">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="flex items-center p-3">
+                            <a href="./contact.html">Contact</a>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">pages</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 180px; height: 310px;">
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500" >
+                                        <a href="./our-team.html" class="text-sm text-white hover:text-yellow-500 duration-500">Our Team</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="#" class="text-sm text-white hover:text-yellow-500 duration-500">About</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./pricing-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Pricing</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./FAQ-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">FAQ page</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./policy-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Privacy Policy</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./terms-condition.html" class="text-sm text-white hover:text-yellow-500 duration-500">Terms & Conditions</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./error-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Error</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="flex items-center">
+                    <a href="tel:1234 567 896" class="flex bg-[#005151] px-3 py-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="#FFBF40" class="w-6 h-6  ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                    </a>
+                    <span class="text-[#005151] mx-2 font-medium ">+1234 567 896</span>
+                    <div class="bg-yellow-500 rounded-full ml-4">
+                        <a href="./contact.html"
+                            class="flex justify-center items-center md:py-3 px-3 md:px-6 rounded-full border border-black">Get
+                            Started
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- banner -->
+        <section class="bg-[#EAFAF8] relative">
+            <img src="../img/services/breadcrump_icon.png" class="absolute bottom-0 left-[-10%]">
+            <div class="container mx-auto flex items-center">
+                <div class="w-6/12 pt-36 pb-36">
+                    <h1 class="text-black text-6xl font-bold">Our All Services</h1>
+                    <p class="pt-6">Welcome to AccuPay, your trusted partner for comprehensive financial solutions.
+                        Explore our range of services tailored to meet your business needs.</p>
+                </div>
+                <div class="w-6/12 mt-24">
+                    <img src="../img/services/breadcrumb_img_1.png" class="ml-16 inline-block">
+                </div>
+            </div>
+        </section>
+        <!-- business -->
+        <section class="mt-14"  data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto">
+                <div class="flex justify-center items-center">
+                    <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                        <div>
+                            <h1 class="heading">Our Core Services</h1>
+                        </div>
+                        <div>
+                            <p class="heading-p font-medium mb-4">hile we go so much further and do so much more for
+                                clients, these core services help <br>provide a framework to provide you with relevant,
+                                reliable & real-time reporting.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="perfect flex gap-6">
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block text-teal-800 bg-[#EAFAF8]  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Accounting Services</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block  bg-[#EAFAF8] text-teal-800  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128.09,57.38a36,36,0,0,1,55.17-27.82,4,4,0,0,1-.56,7A52.06,52.06,0,0,0,152,84c0,1.17,0,2.34.12,3.49a4,4,0,0,1-6,3.76A36,36,0,0,1,128.09,57.38ZM240,160.61a24.47,24.47,0,0,1-13.6,22l-.44.2-38.83,16.54a6.94,6.94,0,0,1-1.19.4l-64,16A7.93,7.93,0,0,1,120,216H16A16,16,0,0,1,0,200V160a16,16,0,0,1,16-16H44.69l22.62-22.63A31.82,31.82,0,0,1,89.94,112H140a28,28,0,0,1,27.25,34.45l41.84-9.62A24.61,24.61,0,0,1,240,160.61Zm-16,0a8.61,8.61,0,0,0-10.87-8.3l-.31.08-67,15.41a8.32,8.32,0,0,1-1.79.2H112a8,8,0,0,1,0-16h28a12,12,0,0,0,0-24H89.94a15.86,15.86,0,0,0-11.31,4.69L56,155.31V200h63l62.43-15.61,38-16.18A8.56,8.56,0,0,0,224,160.61ZM168,84a36,36,0,1,0,36-36A36,36,0,0,0,168,84Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Payroll Processing</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block  bg-[#EAFAF8] text-teal-800 hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,88V44l44,44Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Taxation services</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex pb-16">
+                    <div class="perfect flex gap-6">
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block  bg-[#EAFAF8] text-teal-800  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M239.73,208H224V96a16,16,0,0,0-16-16H164a4,4,0,0,0-4,4V208H144V32.41a16.43,16.43,0,0,0-6.16-13,16,16,0,0,0-18.72-.69L39.12,72A16,16,0,0,0,32,85.34V208H16.27A8.18,8.18,0,0,0,8,215.47,8,8,0,0,0,16,224H240a8,8,0,0,0,8-8.53A8.18,8.18,0,0,0,239.73,208ZM76,184a8,8,0,0,1-8.53,8A8.18,8.18,0,0,1,60,183.72V168.27A8.19,8.19,0,0,1,67.47,160,8,8,0,0,1,76,168Zm0-56a8,8,0,0,1-8.53,8A8.19,8.19,0,0,1,60,127.72V112.27A8.19,8.19,0,0,1,67.47,104,8,8,0,0,1,76,112Zm40,56a8,8,0,0,1-8.53,8,8.18,8.18,0,0,1-7.47-8.26V168.27a8.19,8.19,0,0,1,7.47-8.26,8,8,0,0,1,8.53,8Zm0-56a8,8,0,0,1-8.53,8,8.19,8.19,0,0,1-7.47-8.26V112.27a8.19,8.19,0,0,1,7.47-8.26,8,8,0,0,1,8.53,8Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Real Estate Services</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block  bg-[#EAFAF8] text-teal-800 hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M240,94c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0c-3.35-1.8-63.55-34.69-92.68-80.89A4,4,0,0,1,34.92,136H72a8,8,0,0,0,6.66-3.56l9.34-14,25.34,38a8,8,0,0,0,9.16,3.16,8.23,8.23,0,0,0,4.28-3.34L140.28,136H160a8,8,0,0,0,8-8.53,8.18,8.18,0,0,0-8.25-7.47H136a8,8,0,0,0-6.66,3.56l-9.34,14-25.34-38a8,8,0,0,0-9.17-3.16,8.25,8.25,0,0,0-4.27,3.34L67.72,120H23.53a4,4,0,0,1-3.83-2.81A76.93,76.93,0,0,1,16,94,62.07,62.07,0,0,1,78,32c20.65,0,38.73,8.88,50,23.89C139.27,40.88,157.35,32,178,32A62.07,62.07,0,0,1,240,94Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Healthcare Services</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                        <div class="employeespt-6 w-auto h-auto mt-10  bg-white p-10 border box-hover">
+                            <div class="inline-block  bg-[#EAFAF8] text-teal-800 hover:text-white  hover:bg-black duration-500 text-6xl rounded-full p-5">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M168,24H88A56,56,0,0,0,32,79.75c0,42.72,8,75.4,14.7,95.28,8.72,25.8,20.62,45.49,32.64,54A15.67,15.67,0,0,0,88.47,232a16.09,16.09,0,0,0,16-14.9c.85-11.52,5-49.11,23.53-49.11s22.68,37.59,23.53,49.11a16.09,16.09,0,0,0,9.18,13.36,15.69,15.69,0,0,0,15.95-1.41c12-8.53,23.92-28.22,32.64-54C216,155.15,224,122.47,224,79.75A56,56,0,0,0,168,24Zm3,56.57A8,8,0,1,1,165,95.42L128,80.61,91,95.42A8,8,0,1,1,85,80.57L106.46,72,85,63.42A8,8,0,1,1,91,48.57l37,14.81,37-14.81A8,8,0,1,1,171,63.42L149.54,72Z"></path></svg>
+                            </div>
+                            <h1 class="my-5 text-3xl text-black font-bold">Dentist Services</h1>
+                            <p class="pr-4 font-medium text-gray-500 text-md">
+                               Efficient payroll management is at the heart <br> of our services. Experience seamless payroll <br>processing,
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- global-team -->
+        <section class="section-bg mt-14 pb-28"  data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto">
+                <div class="flex pb-5">
+                    <div class="w-6/12 pt-20">
+                        <a href="#" class="title-btn">Why Accupay</a>
+                        <h3 class="title-heading">A platform for your<br>global team</h3>
+                    </div>
+                    <div class="w-6/12 pt-40">
+                        <p class="title-p ml-40 inline-block">Your dependable guide to achieving freedom from manual HR work<br> and
+                            building that perfect workplace you have always aspired to build. <br>Your dependable guide
+                            to achieving freedom.</p>
+                    </div>
+                </div>
+                <div class="row flex gap-5">
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_1.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_2.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_3.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                </div>
+                <div class="row flex gap-5">
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_4.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_5.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_6.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our-platform -->
+        <section  data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto relative pt-28">
+                <div class="flex justify-center items-center">
+                    <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                        <div>
+                            <p class="heading-btn">How it Work</p>
+                        </div>
+                        <div>
+                            <h1 class="heading">A Step-by-Step Guide to<br> Our Platform</h1>
+                        </div>
+                        <div>
+                            <p class="heading-p">Explore our platform with ease! Sign up, select your industry, and
+                                seamlessly integrate our tailored <br>payment solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-48">
+                    <div class="flex justify-between items-center gap-6 relative mt-16">
+                        <img src="../img/platform/stepArrow2.png" alt="stepArrow2" class="absolute top-3 left-[21%]">
+                        <img src="../img/platform/stepArrow1.png" alt="stepArrow1" class="absolute top-8 right-[22%]">
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256"
+                                    class="w-16 h-16 mt-6 ml-6" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,160H136v16a8,8,0,0,1-16,0V160H104a8,8,0,0,1,0-16h16V128a8,8,0,0,1,16,0v16h16a8,8,0,0,1,0,16Zm0-72V43.31L196.69,88Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" class="w-16 h-16 mt-6 ml-6" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" class="w-16 h-16 mt-6 ml-6" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128.09,57.38a36,36,0,0,1,55.17-27.82,4,4,0,0,1-.56,7A52.06,52.06,0,0,0,152,84c0,1.17,0,2.34.12,3.49a4,4,0,0,1-6,3.76A36,36,0,0,1,128.09,57.38ZM240,160.61a24.47,24.47,0,0,1-13.6,22l-.44.2-38.83,16.54a6.94,6.94,0,0,1-1.19.4l-64,16A7.93,7.93,0,0,1,120,216H16A16,16,0,0,1,0,200V160a16,16,0,0,1,16-16H44.69l22.62-22.63A31.82,31.82,0,0,1,89.94,112H140a28,28,0,0,1,27.25,34.45l41.84-9.62A24.61,24.61,0,0,1,240,160.61Zm-16,0a8.61,8.61,0,0,0-10.87-8.3l-.31.08-67,15.41a8.32,8.32,0,0,1-1.79.2H112a8,8,0,0,1,0-16h28a12,12,0,0,0,0-24H89.94a15.86,15.86,0,0,0-11.31,4.69L56,155.31V200h63l62.43-15.61,38-16.18A8.56,8.56,0,0,0,224,160.61ZM168,84a36,36,0,1,0,36-36A36,36,0,0,0,168,84Z"></path></svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact -->
+        <section class="bg-[#18938A]  relative"  data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto">
+                <div class="flex">
+                    <div class="w-6/12 text-white">
+                        <div class="pt-28 pb-20">
+                            <span class="mb-5 inline-block">Experience AccuPay</span>
+                            <h1 class="text-6xl font-semibold mb-8">We’ve got everything you need?</h1>
+                            <p class="font-medium">We save you from all that boring paperwork! From global hiring, to
+                                instant payments, and taxes, we’ve got your back.
+                            </p>
+                            <div class="mt-8 mx-0">
+                                <div class="bg-yellow-500 rounded-full ml-4 inline-block">
+                                    <a href="./contact.html"
+                                        class="inline-block md:py-3  md:px-6 rounded-full border text-black border-black">Contact
+                                        Us
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-2 inline-block">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-6/12">
+                        <img src="../img/contact/contact_illus.png" class="w-full mt-20 ml-7">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- pricing -->
+        <section class="section-bg pb-24" data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto ">
+                <div class="pt-24">
+                    <div class="flex justify-center items-center">
+                        <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                            <div>
+                                <p class="heading-btn">Pricing</p>
+                            </div>
+                            <div>
+                                <h1 class="heading">Our Pricing</h1>
+                            </div>
+                            <div>
+                                <p class="heading-p">At Accupay, we believe in providing clear and flexible pricing
+                                    options tailored to your<br> business needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-7">
+                        <div class="w-3/12  bg-white p-10  border-white justify-start items-start h-[600px] box-hover mt-10"
+                            style="width:416px;">
+                            <div class="p-4 inline-block  bg-zinc-100  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="1" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="text-4xl">
+                                    <path
+                                        d="M272.56 37.535c-2.73 9.522-7.43 19.245-13.263 29.092-10.537 17.786-25.074 35.97-40.424 52.674-15.35 16.705-31.498 31.88-45.318 43.393-1.636 1.363-3.232 2.664-4.797 3.92 73.788-1.87 129.856-10.404 172.217-21.527-16.666-35.65-38.964-71.863-68.414-107.55zm25.792 3.518c25.297 32.908 44.98 66.205 60.097 99.062 20.755-6.355 37.728-13.287 51.486-20.166 23.195-11.598 37.367-23.02 45.66-31.313.56-.56 1.02-1.055 1.523-1.578-24.93-3.32-85.136-14.01-158.768-46.007zm171.416 58.832c-.47.488-.944.98-1.444 1.478-9.707 9.707-25.535 22.285-50.34 34.688-14.265 7.133-31.51 14.208-52.26 20.673C385.457 204.35 399.3 267.8 402.54 315.27c3.912 62.24-4.2 114.432-13.243 149.023 6.263-8.047 12.805-17.732 19.22-28.805 15.812-27.3 31.415-62.77 43.772-102.18 22.904-73.052 34.377-159.596 17.478-233.423zm-121.395 61.86c-45.878 12.342-106.803 21.565-187.478 23.042 31.007 29.097 61.39 64.16 89.17 100.188-26.307 30.073-54.772 57.992-82.956 82.58-3.816 3.33-7.626 6.592-11.424 9.797l-8.08-17.502-22.487 2.498 2.497 22.488 15.117 3.24c-12.492 10.146-24.77 19.552-36.617 28.13l-4.922-16.608-22.613-.762-.762 22.615 13.672 5.075c-6.067 4.17-11.992 8.106-17.724 11.766-6.105 3.9-12 7.478-17.66 10.76l.238-15.46-21.354-7.483-7.482 21.354 13.086 10.132c-13.478 6.994-24.8 11.673-32.82 13.678l4.367 17.46c3.664-.916 7.605-2.17 11.78-3.718l-.146-.582c2.415-.604 5.167-1.5 8.19-2.647 5.216-2.243 10.77-4.91 16.607-7.945l-.258 16.88 21.354 7.48 7.484-21.352-14.133-10.942c6.522-3.762 13.337-7.91 20.433-12.44 2.273-1.452 4.58-2.956 6.902-4.484 4.84-3.31 9.815-6.832 14.893-10.527l5.352 18.06 22.615.762.762-22.615-15.776-5.853c12.51-9.533 25.545-20.078 38.827-31.473l8.07 17.488 22.49-2.498-2.5-22.488-15.634-3.352c4.477-3.976 8.97-8.032 13.473-12.183 63.37-58.424 128.223-133.68 166.674-209.6-.408-.986-.81-1.97-1.227-2.956zm9.815 25.288c-23.644 43.21-54.687 85.363-88.528 124.104 10.784 14.773 21.07 29.505 30.692 43.85 21.597 32.21 39.898 62.39 53.326 86.656 6.17 11.15 11.17 20.653 15.084 28.812 9.33-31.65 20.007-87.328 15.814-154.055-2.504-39.857-10.188-83.775-26.39-129.367z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class=" pt-4 pb-4 text-4xl text-black font-bold">Basic Plan</h3>
+                            <p class="title-p pb-8">
+                                Hire employees in 100+ countries where you don't have entities
+                            </p>
+                            <h2 class=" pb-6">
+                                <span class="pt-5 text-[56px] text-black font-bold">
+                                    $10
+                                </span>
+                                <span class="text-body title-p">
+                                    - monthly
+                                </span>
+                            </h2>
+                            <ul class="text-bodyText flex flex-col gap-5 pb-8">
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Accurate and Timely
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Basic Financial Records
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Starting at $X per month
+                                </li>
+                            </ul>
+                            <div class="bg-teal-800 rounded-full ml-4">
+                                <a href="./contact.html"
+                                    class="flex justify-center items-center md:py-3 px-3 md:px-6 rounded-full  text-white hover:bg-black duration-500">Get
+                                    Started
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="w-6 h-6 pl-3 stroke-width=48">
+                                        <path fill-rule="evenodd"
+                                            d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-3/12 bg-white p-10 border border-white justify-start items-start h-[600px] box-hover mt-10"
+                            style="width:416px;">
+                            <div
+                                class="p-4 inline-block  bg-zinc-100  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="text-4xl">
+                                    <path
+                                        d="M934.32 65.904c10.432 0 17.776 1.938 21.6 3.41 4.592 12.224 10.753 56.031-34.528 101.343L690.4 401.633l1.664 28.656c3.504 59.968 10 167.44 15.6 259.567 4.944 82 9.633 159.44 9.936 166.032.16 4.529.225 5.601-3.999 10.689-9.44 11.472-27.056 30.912-41.904 47.024-23.024-62.032-71.408-193.057-98.128-266.4l-34.336-94.368-71.024 71.024-130.608 125.584-18.192 18.16-.56 25.68c-.432 20.496-.336 57.28-.288 89.712.064 22.592.129 43.12-.031 54.432-.288.528 4.368 1.152 3.936 1.904-2.784-4.464-5.776-9.28-8.944-14.288-26.336-42-62.784-100.096-73.904-118.224l-8.128-13.28-13.344-8.065c-48.528-29.311-102.288-63.151-135.088-84.287 1.136-.656 2.063 2.816 2.815 2.415h2.128c10.32 0 27.376.224 46.496.496 25.008.336 53.376.752 75.088.752 8.32 0 15.712-.064 21.664-.192l25.68-.592 18.16-18.16 125.744-129.712 70.784-70.752-93.935-34.56c-70.592-25.967-205.808-76.464-269.056-100.224 16.223-14.944 35.775-32.688 47.183-42.129 3.184-2.624 5.665-3.967 7.376-3.967l2.256.064c7.056.336 94.688 6.064 179.407 11.6 89.936 5.872 191.44 12.496 249.151 16.16l28.848 1.808 231.024-231.04c32.448-32.4 64.32-37.248 80.449-37.248zm.001-63.997c-37.808 0-84.222 14.526-125.678 55.998L598.035 268.497c-118.624-7.504-422.432-27.6-429.968-27.808a100.693 100.693 0 0 0-4.88-.129c-10.256 0-27.968 1.968-48.128 18.624-23.664 19.569-73.008 65.97-73.008 65.97-11.904 11.935-17.936 26.719-16.496 40.623.88 8.4 5.44 23.712 26.064 31.777 12.528 4.912 211.904 79.504 303.969 113.376L229.844 640.642c-5.569.128-12.465.192-20.257.192-38.336 0-97.776-1.248-121.601-1.248-3.152 0-5.68 0-7.473.064-7.248.224-22.256-3.344-61.84 29.744l-2.816 2.624C3.985 683.89 1.201 695.73.945 703.554c-.256 8.064 1.904 19.68 13.568 29.024 7.008 5.664 96.848 63.184 170.527 107.68 17.665 28.817 98.945 158 103.185 165.008 6.193 10.464 16.32 16.432 28.433 16.816h1.008c11.776 0 23.872-5.84 35.712-17.344 33.504-39.184 28.88-55.407 29.023-62.224.528-21.376-.368-111.936.4-147.84l130.592-125.6c33.376 91.68 106.336 289.008 111.216 301.567 8.128 20.624 23.44 25.153 31.84 26 1.376.16 2.785.225 4.16.225 12.625 0 25.712-5.936 36.432-16.655 0 0 46.256-49.088 65.904-72.976 19.68-23.872 18.913-44.256 18.529-53.872-.16-6.656-18.689-308.816-25.569-426.816L966.561 215.89c74.657-74.689 62.785-164.688 35.057-192.368-12.24-12.304-37.024-21.615-67.297-21.616z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class=" pt-4 pb-4 text-4xl text-black font-bold">Standard Plan</h3>
+                            <p class="title-p pb-8">
+                                All packages come with [mention any additional benefits, features,
+                            </p>
+                            <h2 class=" pb-6">
+                                <span class="pt-5 text-[56px] text-black font-bold">
+                                    $20
+                                </span>
+                                <span class="text-body title-p">
+                                    - monthly
+                                </span>
+                            </h2>
+                            <ul class="text-bodyText flex flex-col gap-5 pb-8">
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Payroll Processing
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Full Bookkeeping
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    Tax Preparation
+                                </li>
+                            </ul>
+                            <div class="bg-teal-800 rounded-full ml-4">
+                                <a href="./contact.html"
+                                    class="flex justify-center items-center md:py-3 px-3 md:px-6 rounded-full  text-white hover:bg-black duration-500">Get
+                                    Started
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="w-6 h-6 pl-3 stroke-width=48">
+                                        <path fill-rule="evenodd"
+                                            d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-3/12 bg-white p-10 border border-white justify-start items-start h-[600px] box-hover mt-10"
+                            style="width:416px;">
+                            <div
+                                class="p-4 inline-block  bg-zinc-100  hover:text-white  hover:bg-black duration-500 text-6xl rounded-full">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" class="text-4xl">
+                                    <path
+                                        d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z">
+                                    </path>
+                                    <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-
+                                    .126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class=" pt-4 pb-4 text-4xl text-black font-bold">Standard Plan</h3>
+                            <p class="title-p pb-8">
+                                All packages come with [mention any additional benefits, features,
+                            </p>
+                            <h2 class=" pb-6">
+                                <span class="pt-5 text-[56px] text-black font-bold">
+                                    $20
+                                </span>
+                                <span class="text-body title-p">
+                                    - monthly
+                                </span>
+                            </h2>
+                            <ul class="text-bodyText flex flex-col gap-5 pb-8">
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Payroll Processing
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+
+                                    </span>
+                                    Full Bookkeeping
+                                </li>
+                                <li class=" inline-flex gap-3 title-p">
+                                    <span class=" group-hover:bg-black duration-500  rounded-full text-3xl text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-7 h-7 fill-teal-700 ">
+                                            <path fill-rule="evenodd"
+                                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                                clip-rule="evenodd"/>
+                                        </svg>
+                                    </span>
+                                    Tax Preparation
+                                </li>
+                            </ul>
+                            <div class="bg-teal-800 rounded-full ml-4">
+                                <a href="./contact.html"
+                                    class="flex justify-center items-center md:py-3 px-3 md:px-6 rounded-full  text-white hover:bg-black duration-500">Get
+                                    Started
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="w-6 h-6 pl-3 stroke-width=48">
+                                        <path fill-rule="evenodd"
+                                            d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- faq -->
+        <section data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto pb-28">
+                <div class="pt-24">
+                    <div class="flex justify-center items-center">
+                        <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                            <div>
+                                <p class="heading-btn">FAQS</p>
+                            </div>
+                            <div>
+                                <h1 class="heading">Frequently asked questions <br> answers</h1>
+                            </div>
+                            <div>
+                                <p class="heading-p">At Accupay, we believe in providing clear and flexible pricing options tailored to your<br>business needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex pt-12">
+                        <div class="w-6/12">
+                            <div>
+                                <img src="../img/services/faq_illus.png" class="inline-block hover:scale-110 duration-500">
+                            </div>
+                        </div>
+                    <div class="w-6/12">   
+                        <div class="pb-5">
+                            <div class="sidebar-dropdown p-6 text-xl border box-hover">
+                                <a href="javascript:void(0);" class="flex justify-between transition-all duration-150 text-black font-bold text-2xl">What services does AccuPay offer?
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                                </a>
+                                <div class="sidebar-submenu hidden">
+                                    <p class="text-base pt-5">AccuPay offers a comprehensive suite of services, including accounting, payroll processing, tax preparation, financial advisory, and global payroll solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-5">
+                            <div class="sidebar-dropdown p-6 text-xl border box-hover">
+                                <a href="javascript:void(0);" class="flex justify-between transition-all duration-150 text-black font-bold text-2xl">How does the accounting process work?
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                                </a>
+                                <div class="sidebar-submenu hidden">
+                                    <p class="text-base pt-5">AccuPay offers a comprehensive suite of services, including accounting, payroll processing, tax preparation, financial advisory, and global payroll solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-5">
+                            <div class="sidebar-dropdown p-6 text-xl border box-hover">
+                                <a href="javascript:void(0);" class="flex justify-between transition-all duration-150 text-black font-bold text-2xl">Can AccuPay handle international payroll?
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                                </a>
+                                <div class="sidebar-submenu hidden">
+                                    <p class="text-base pt-5">AccuPay offers a comprehensive suite of services, including accounting, payroll processing, tax preparation, financial advisory, and global payroll solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-5">
+                            <div class="sidebar-dropdown p-6 text-xl border box-hover">
+                                <a href="javascript:void(0);" class="flex justify-between transition-all duration-150 text-black font-bold text-2xl">How quickly can services be initiated?
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                                </a>
+                                <div class="sidebar-submenu hidden">
+                                    <p class="text-base pt-5">AccuPay offers a comprehensive suite of services, including accounting, payroll processing, tax preparation, financial advisory, and global payroll solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-5">
+                            <div class="sidebar-dropdown p-6 text-xl border box-hover">
+                                <a href="javascript:void(0);" class="flex justify-between transition-all duration-150 text-black font-bold text-2xl">How do I get in touch with AccuPay's?
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>
+                                </a>
+                                <div class="sidebar-submenu hidden">
+                                    <p class="text-base pt-5">AccuPay offers a comprehensive suite of services, including accounting, payroll processing, tax preparation, financial advisory, and global payroll solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>    
+                </div>
+            </div>   
+        </section>
+        <!-- form -->
+        <section>
+            <div class="container bg-[#18938A] mx-auto relative" style="margin-bottom: -150px">
+                <div class="text-center text-6xl px-36 pt-28 pb-32 text-white font-bold leading-snug">
+                    <h1>Make Accupay Part Of Your Work And Get Daily Update</h1>
+                </div>
+                <form action="" method="">
+                    <div class="flex justify-center items-start">
+                        <input type="email" name="" id="" placeholder="Enter Your Email"
+                            class="text-black px-8  py-3 -mt-24 w-4/12">
+                        <div class="">
+                            <div class="bg-yellow-500 ml-4 -mt-24">
+                                <a href="#"
+                                    class="flex justify-center items-center md:py-3 px-3 border border-black">Subscribe
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="pt-72" style="background-color: #060B1E;">
+        <div class="container mx-auto">
+            <div class="flex">
+                <div class="w-3/12">
+                    <img src="../img/footer/logo_white.png" alt="">
+                    <span class="inline-block text-gray-500 mt-5 mb-6">Your trusted partner in accounting and payroll
+                        solutions. We deliver precision, efficiency, and tailored services</span>
+                    <ul class="flex items-start">
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/social.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/twitter.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/linkedin.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/instagram.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Resources</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Services</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Accounting Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Taxations Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Healthcare Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Dentist Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Get In Touch</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+                            <a href="#" class="ml-2">admin@mail.com</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                            </svg>
+                            <a href="#" class="ml-2">+123 456 789</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            <a href="#" class="ml-2">255 Sheet, City Name Home Land, NY</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+       
+    </footer>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".sidebar-dropdown > a").click(function () {
+            $(".sidebar-submenu").slideUp(200);
+                if ($(this).parent().hasClass("active")) {
+                    $(".sidebar-dropdown").removeClass("active");
+                    $(this).parent().removeClass("active");
+                } else {
+                    $(".sidebar-dropdown").removeClass("active");
+                    $(this).next(".sidebar-submenu").slideDown(200);
+                    $(this).parent().addClass("active");
+                }
+            });
+        });
+        
+    </script>
+    <script>
+        //fixed header
+        $(window).scroll(function(){
+         if($(this).scrollTop() >300){
+             $(".header").addClass("fixed-header");
+         }
+         else{
+             $(".header").removeClass("fixed-header");
+         }
+     });
+     //up to down 
+     $(".up-button").click(function(){
+            $('html, body').animate({scrollTop : 0},800);
+     });
+      //up-button
+     $(window).scroll(function(){
+         if($(this).scrollTop()){
+             $(".up-button").fadeIn();
+         }
+         else
+         {
+             $(".up-button").fadeOut();
+         }
+     });            
+ </script>
+ <!-- aos-animation -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+    AOS.init();
+  </script>
+</body>
+</html>

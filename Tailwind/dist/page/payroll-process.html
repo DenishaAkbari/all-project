@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accupay-Accounting and playroll</title>
+        <!-- aos-animation -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- favicon-icon -->
+        <link rel="shortcut icon" href="../img/header/favicon.png">
+        <!-- style-css -->
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../../src/index.css">
+        <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <style>
+        .container {
+            max-width: 1296px;
+        }
+    </style>
+     <!-- scroll-bar -->
+     <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #d6d6d6b3;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: #E9A114;
+        }
+    </style>
+    <style>
+        header{
+            width: 100%;
+            padding: 20px 0px;
+            cursor: pointer;
+        }
+        .header.fixed-header{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            z-index: 999;
+            transition: 0.2s linear;
+            box-shadow: 0px 5px 40px #d1d1d18f;
+        }
+        .up-button{
+            width: 50px;
+            height: 50px;
+            background-color:#18938A ;
+            border-radius: 50%;
+            bottom: 20px;
+            position: fixed;
+            right: 50px;
+            z-index: 999;
+        }
+        .up-button a svg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            margin: 15px 15px;
+    
+        }
+    </style>
+    <!-- back-to-top -->
+    <div class="up-button">
+        <a href="#">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg>
+        </a>
+    </div>
+    <header class="absolute w-full top-0 left-0 header">
+        <div class="container mx-auto">
+            <div class="row flex items-center">
+                <div class="w-40 py-6">
+                    <img src="../img/header/logo.png">
+                </div>
+                <nav class="mx-auto">
+                    <ul class="flex text-[#005151]">
+                        <li class="flex items-center p-3">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">Services</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3  ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 160px; height: 245px;">
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./services.html" class="text-sm text-white hover:text-yellow-500 duration-500">All Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./account-service.html" class="text-sm text-white hover:text-yellow-500 duration-500">Account-Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./payroll-process.html" class="text-sm text-white hover:text-yellow-500 duration-500">Payroll-Process</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./healthcare.html" class="text-sm text-white hover:text-yellow-500 duration-500">Healthcare Service</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./dentist.html" class="text-sm text-white hover:text-yellow-500 duration-500">Dentist</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./real-state-service.html" class="text-sm text-white hover:text-yellow-500 duration-500">Real-State Service</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">Shop</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3  ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 140px; height: 100px;">
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./shop.html" class="text-sm text-white hover:text-yellow-500 duration-500">Shop Page</a>
+                                    </li>
+                                    <li class="py-2 px-4 hover:translate-x-2 duration-500">
+                                        <a href="./cart.html" class="text-sm text-white hover:text-yellow-500 duration-500">Cart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-center p-3">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="flex items-center p-3">
+                            <a href="./contact.html">Contact</a>
+                        </li>
+                        <li class="flex items-center p-3 dropdown relative group">
+                            <a href="#">pages</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-3 h-3 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <div class="dropdown-content absolute top-[100%] left-0 bg-teal-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible rounded-xl duration-500">
+                                <ul style="width: 180px; height: 310px;">
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500" >
+                                        <a href="./our-team.html" class="text-sm text-white hover:text-yellow-500 duration-500">Our Team</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="#" class="text-sm text-white hover:text-yellow-500 duration-500">About</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./pricing-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Pricing</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./FAQ-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">FAQ page</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./policy-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Privacy Policy</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./terms-condition.html" class="text-sm text-white hover:text-yellow-500 duration-500">Terms & Conditions</a>
+                                    </li>
+                                    <li class="py-2 px-6 hover:translate-x-2 duration-500">
+                                        <a href="./error-page.html" class="text-sm text-white hover:text-yellow-500 duration-500">Error</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="flex items-center">
+                    <a href="tel:1234 567 896" class="flex bg-[#005151] px-3 py-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="#FFBF40" class="w-6 h-6  ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                    </a>
+                    <span class="text-[#005151] mx-2 font-medium ">+1234 567 896</span>
+                    <div class="bg-yellow-500 rounded-full ml-4">
+                        <a href="./contact.html"
+                            class="flex justify-center items-center md:py-3 px-3 md:px-6 rounded-full border border-black">Get
+                            Started
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- banner -->
+        <section class="bg-gradient-to-r from-white from-8% via-[#cceae5] via-27% to-[#cbe7e5] to-65% mb-5"
+            style="height: 610px; ">
+            <img src="../img/healthcare-page/breadcrump_icon.png" alt="icon" class="absolute bottom-96 left-[-3%]">
+            <!-- <img src="img/banner/hero_illus.png"  class="bottom-0 right-0 absolute"> -->
+            <div class="container mx-auto">
+                <div class="row flex items-center">
+                    <div class="w-6/12 ">
+                        <p class="font-normal text-slate-700 text-base mb-5"><a href="../index.html">Home&nbsp;</a> > Services > Healthcare Services</p>
+                        <div class="text-6xl font-semibold mt-2 mb-5">
+                            <p>Healthcare Services</p>
+                        </div>
+                        <span class="text-slate-700  mb-4">AccuPay's Healthcare Services are designed to support the financial health of your<br> medical practice or healthcare facility</span>
+                        
+                    </div>
+                    <div class="w-6/12">
+                        <img src="../img/payroll-process-page/breadcrumb_img_2.png" class="mt-28 ml-20">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our-payroll-processing -->
+        <section class=" mb-20" data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto">
+                <div class="flex">
+                    <div class="w-8/12 mt-36 ml-20">
+                        <div class="flex justify-center items-center">
+                            <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                                <div>
+                                    <h1 class="font-bold leading-tight mb-3" style="font-size: 50px;">We help you with payroll processing services</h1>
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 mb-8 text-sm">At AccuPay, we understand the critical importance of accurate and timely payroll processing. Our comprehensive payroll solutions </p>
+                                    <h3 class="text-4xl font-bold mb-7">Our Payroll Processing Offerings:</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="flex flex-col gap-5 justify-start items-start">
+                            <li class="mb-1">
+                                <div class="flex justify-start items-center gap-2">
+                                    <span class="text-2xl text-teal-900">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                    </span>
+                                    Efficient Payroll Management
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <div class="flex justify-start items-center gap-2">
+                                    <span class="text-2xl text-teal-900">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                    </span>
+                                    Compliance Assurance
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <div class="flex justify-start items-center gap-2">
+                                    <span class="text-2xl text-teal-900">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                    </span>
+                                    Direct Deposit Service
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <div class="flex justify-start items-center gap-2">
+                                    <span class="text-2xl text-teal-900">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                    </span>
+                                    Tax Filing and Reporting
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <div class="flex justify-start items-center gap-2">
+                                    <span class="text-2xl text-teal-900">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                    </span>
+                                    Employee Self-Service Portals
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-6/12 overflow-hidden mt-16">
+                        <img src="../img/payroll-process-page/we_help.png" alt="healthcare_section_img" class="mt-14 hover:scale-110 duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- payroll-service -->
+        <section class=" section-bg" style="height: 1200px;" data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto relative">
+                <div class="row">
+                    <div class="flex justify-center items-center">
+                        <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                            <div>
+                                <p class="heading-btn mt-20">What We Do</p>
+                            </div>
+                            <div>
+                                <h1 class="heading">Payroll services we provide <br>for the client</h1>
+                            </div>
+                            <div>
+                                <p class="heading-p">At AccuPay, we specialize in delivering comprehensive Accounting and Payroll Processing services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex">
+                    <div class="w-6/12 overflow-hidden">
+                        <img src="../img/payroll-process-page/what_we_do.png" alt="healthcare_section_img" class="mt-14 hover:scale-110 duration-500">
+                    </div>
+                    <div class="w-6/12 mt-20">
+                        <div class="flex justify-start items-start gap-4 ">
+                            <div class="text-2xl group-hover:bg-teal-900 p-4 w-9 h-9 rounded-full relative after:absolute after:bg-gray-300 after:h-[300px] after:w-[1px] after:-right-0">
+                                <span class="text-white font-bold bg-teal-900 w-12 h-12 rounded-full flex justify-center items-center">1</span>
+                            </div>
+                            <div class="ml-14">
+                            <h4 class="text-2xl font-bold">Payroll Processing Services</h4>
+                            <p class=" text-gray-900 pt-4 pb-6">Efficiently manage your payroll with our state-of-the-art processing services. From accurate salary disbursements.</p>
+                            <hr class="mb-7">
+                            </div>
+                        </div>
+                        <div class="flex justify-start items-start gap-4 ">
+                            <div class="text-2xl group-hover:bg-teal-900 p-4 w-9 h-9 rounded-full relative after:absolute after:bg-gray-300 after:h-[300px] after:w-[1px] after:-right-0">
+                                <span class="text-white font-bold bg-teal-900 w-12 h-12 rounded-full flex justify-center items-center">2</span>
+                            </div>
+                            <div class="ml-14">
+                            <h4 class="text-2xl font-bold">Accounting and Bookkeeping</h4>
+                            <p class=" text-gray-900 pt-4 pb-6">Navigate the complexities of financial management with our professional accounting and bookkeeping services. </p>
+                            <hr class="mb-7">
+                            </div>
+                        </div>
+                        <div class="flex justify-start items-start gap-4 ">
+                            <div class="text-2xl group-hover:bg-teal-900 p-4 w-9 h-9 rounded-full relative  after:absolute after:bg-gray-300 after:h-[200px] after:w-[1px] after:-right-0">
+                                <span class="text-white font-bold bg-teal-900 w-12 h-12 rounded-full flex justify-center items-center">3</span>
+                            </div>
+                            <div class="ml-14">
+                            <h4 class="text-2xl font-bold">Tax Preparation and Filing</h4>
+                            <p class=" text-gray-900 pt-4 pb-6">Ensure a seamless tax season with our expert tax preparation and filing services. We handle all necessary documentation.</p>
+                            <hr class="mb-7">
+                            </div>
+                        </div>
+                        <div class="flex justify-start items-start gap-4 ">
+                            <div class="text-2xl group-hover:bg-teal-900 p-4 w-9 h-9 rounded-full relative">
+                                <span class="text-white font-bold bg-teal-900 w-12 h-12 rounded-full flex justify-center items-center">4</span>
+                            </div>
+                            <div class="ml-14">
+                            <h4 class="text-2xl font-bold">Financial Advisory</h4>
+                            <p class=" text-gray-900 pt-4 pb-6">Empower your business with strategic financial guidance. Our experienced advisors provide insights and recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our-platform -->
+        <section data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto relative pt-28">
+                <div class="flex justify-center items-center">
+                    <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                        <div>
+                            <p class="heading-btn">How it Work</p>
+                        </div>
+                        <div>
+                            <h1 class="heading">A Step-by-Step Guide to<br> Our Platform</h1>
+                        </div>
+                        <div>
+                            <p class="heading-p">Explore our platform with ease! Sign up, select your industry, and
+                                seamlessly integrate our tailored <br>payment solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-48">
+                    <div class="flex justify-between items-center gap-6 relative mt-16">
+                        <img src="../img/platform/stepArrow2.png" alt="stepArrow2" class="absolute top-3 left-[21%]">
+                        <img src="../img/platform/stepArrow1.png" alt="stepArrow1" class="absolute top-8 right-[22%]">
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256"
+                                    class="w-16 h-16 mt-6 ml-6" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,160H136v16a8,8,0,0,1-16,0V160H104a8,8,0,0,1,0-16h16V128a8,8,0,0,1,16,0v16h16a8,8,0,0,1,0,16Zm0-72V43.31L196.69,88Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" class="w-16 h-16 mt-6 ml-6" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0c27.39,8.95,50.86,27.83,66.09,54.16A8,8,0,0,1,230.93,220Z"></path></svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                        <div class="flex justify-center items-center text-center flex-col max-w-sm">
+                            <div
+                                class="bg-gray-50 rounded-full border text-teal-900 text-3xl w-28 h-28 inline-block box-hover">
+                                <svg stroke="currentColor" class="w-16 h-16 mt-6 ml-6" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128.09,57.38a36,36,0,0,1,55.17-27.82,4,4,0,0,1-.56,7A52.06,52.06,0,0,0,152,84c0,1.17,0,2.34.12,3.49a4,4,0,0,1-6,3.76A36,36,0,0,1,128.09,57.38ZM240,160.61a24.47,24.47,0,0,1-13.6,22l-.44.2-38.83,16.54a6.94,6.94,0,0,1-1.19.4l-64,16A7.93,7.93,0,0,1,120,216H16A16,16,0,0,1,0,200V160a16,16,0,0,1,16-16H44.69l22.62-22.63A31.82,31.82,0,0,1,89.94,112H140a28,28,0,0,1,27.25,34.45l41.84-9.62A24.61,24.61,0,0,1,240,160.61Zm-16,0a8.61,8.61,0,0,0-10.87-8.3l-.31.08-67,15.41a8.32,8.32,0,0,1-1.79.2H112a8,8,0,0,1,0-16h28a12,12,0,0,0,0-24H89.94a15.86,15.86,0,0,0-11.31,4.69L56,155.31V200h63l62.43-15.61,38-16.18A8.56,8.56,0,0,0,224,160.61ZM168,84a36,36,0,1,0,36-36A36,36,0,0,0,168,84Z"></path></svg>
+                            </div>
+                            <h4 class="mb-5 mt-5 text-2xl font-bold hover:text-teal-800 duration-500"
+                                style="cursor: pointer;">Create An Account</h4>
+                            <p class="heading-p hover:text-teal-800 duration-500" style="cursor: pointer;">Join our
+                                platform effortlessly! Streamlined user registration with secure verification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- count -->
+        <section class="w-full relative"
+            style="background-image: url('../img/count/counter_bg.png'); height: 400px;"data-aos="fade-up"
+            data-aos-duration="3000">
+            <div class="container text-white flex justify-between items-center mx-auto">
+                <div class="row flex gap-52 mt-24">
+                    <div class="max-w-72">
+                        <p class="text-lg pb-3">
+                            <span class="font-bold text-center" data-count="63" style="font-size: 60px;">63 Hrs</span>
+                        </p>
+                        <p class="mt-3">Average time saved per month running payroll and HR after switching to Accupay.
+                        </p>
+                    </div>
+                    <div class="max-w-72">
+                        <p class="text-lg pb-3">
+                            <span class="font-bold text-center" data-count="14" style="font-size: 60px;">£ 14,880</span>
+                        </p>
+                        <p class="mt-3">Average time saved per month running payroll and HR after switching to Accupay.
+                        </p>
+                    </div>
+                    <div class="max-w-72">
+                        <p class="text-lg pb-3">
+                            <span class="font-bold text-center" data-count="10" style="font-size: 60px;">8 Weeks</span>
+                        </p>
+                        <p class="mt-3">Average time saved per month running payroll and HR after switching to Accupay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- global-team -->
+        <section class="section-bg" style="height: 1200px;"data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="container mx-auto">
+                <div class="flex pb-5">
+                    <div class="w-6/12 pt-20">
+                        <a href="#" class="title-btn">Why Accupay</a>
+                        <h3 class="title-heading">A platform for your<br>global team</h3>
+                    </div>
+                    <div class="w-6/12 pt-40">
+                        <p class="title-p ml-40 inline-block">Your dependable guide to achieving freedom from manual HR work<br> and
+                            building that perfect workplace you have always aspired to build. <br>Your dependable guide
+                            to achieving freedom.</p>
+                    </div>
+                </div>
+                <div class="row flex gap-5">
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_1.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_2.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_3.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                </div>
+                <div class="row flex gap-5">
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_4.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_5.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                    <div class="employeespt-6 bg-white mt-10 border box-hover" style="width: 416px;height: 360px;">
+                        <a href="#" class="flex pt-8 pl-12 text-teal-800">
+                            <img src="../img/global team/Card_6.png" alt="" class="mx-auto">
+                        </a>
+                        <h1 class="heading-4 text-black font-['Outfit'] mt-8 ms-8 text-2xl font-bold text-left pl-10">
+                            Hire or relocate team<br> member with in house visa <br>support</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- que-ans -->
+        <section class="pt-28 pb-24"data-aos="fade-up"
+        data-aos-duration="3000">
+            <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center max-xxl:overflow-hidden flex-col">
+                    <div>
+                        <p class="heading-btn">Contact</p>
+                    </div>
+                    <div>
+                        <h1 class="heading">Questions? Meet Ansawer</h1>
+                    </div>
+                    <div>
+                        <p class="heading-p mt-0">Startups thrive with AccuPay. Their flexible payroll solutions have
+                            been instrumental in our journey, <br>providing the support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto">
+                <div class="flex mx-auto text-center mt-14">
+                    <div class="w-3/12">
+                        <div>
+                            <img src="../img/que/binoculars.png" class="inline-block">
+                            <h2 class="text-2xl text-black font-bold mt-3">Compare Accupay</h2>
+                            <span class="text-md mt-4 inline-block text-[#060B1E]">Explore how AccuPay stands out. Check
+                                <br> our comparison.</span>
+                            <div>
+                                <a href="#"
+                                    class="mt-4 inline-block underline underline-offset-4 mb-5 text-[#005151]">Compare
+                                    Accupay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-3/12">
+                        <div>
+                            <img src="../img/que/monitor.png" class="inline-block">
+                            <h2 class="text-2xl text-black font-bold mt-3">Explore The Demo</h2>
+                            <span class="text-md mt-4 inline-block text-[#060B1E]">Curious about our services? Request a
+                                <br> demo to experience firsthand</span>
+                            <div>
+                                <a href="#"
+                                    class="mt-4 inline-block underline underline-offset-4 mb-5 text-[#005151]">See
+                                    Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-3/12">
+                        <div>
+                            <img src="../img/que/headphones.png" class="inline-block">
+                            <h2 class="text-2xl text-black font-bold mt-3">Give Us a Ring</h2>
+                            <span class="text-md mt-4 inline-block text-[#060B1E]">Monday through Friday from 6AM - 6PM
+                                <br>MST</span>
+                            <div>
+                                <a href="#"
+                                    class="mt-4 inline-block underline underline-offset-4 mb-5 text-[#005151]">Call
+                                    Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-3/12">
+                        <div>
+                            <img src="../img/que/chat.png" class="inline-block">
+                            <h2 class="text-2xl text-black font-bold mt-3">Help Cent</h2>
+                            <span class="text-md mt-4 inline-block text-[#060B1E]">Looking for answers? Visit our Help
+                                Center<br>for detailed guides</span>
+                            <div>
+                                <a href="#"
+                                    class="mt-4 inline-block underline underline-offset-4 mb-5 text-[#005151]">Help
+                                    Center</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- form -->
+        <section>
+            <div class="container bg-[#18938A] mx-auto relative" style="margin-bottom: -150px">
+                <div class="text-center text-6xl px-36 pt-28 pb-32 text-white font-bold leading-snug">
+                    <h1>Make Accupay Part Of Your Work And Get Daily Update</h1>
+                </div>
+                <form action="" method="">
+                    <div class="flex justify-center items-start">
+                        <input type="email" name="" id="" placeholder="Enter Your Email"
+                            class="text-black px-8  py-3 -mt-24 w-4/12">
+                        <div class="">
+                            <div class="bg-yellow-500 ml-4 -mt-24">
+                                <a href="#"
+                                    class="flex justify-center items-center md:py-3 px-3 border border-black">Subscribe
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="pt-72" style="background-color: #060B1E;">
+        <div class="container mx-auto">
+            <div class="flex">
+                <div class="w-3/12">
+                    <img src="../img/footer/logo_white.png" alt="">
+                    <span class="inline-block text-gray-500 mt-5 mb-6">Your trusted partner in accounting and payroll
+                        solutions. We deliver precision, efficiency, and tailored services</span>
+                    <ul class="flex items-start">
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/social.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/twitter.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/linkedin.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="bg-slate-700 p-3 rounded-full
+                            hover:bg-s1 duration-500 hover:-translate-y-1 block text-white">
+                                <img src="../img/footer/instagram.png" class="w-5 h-5">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Resources</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Services</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Accounting Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Taxations Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Healthcare Services</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500">
+                            <a href="#">Dentist Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-3/12 ml-28">
+                    <h3
+                        class="text-white text-2xl font-bold relative after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-600 hover:after:w-[40%] after:duration-500">
+                        Get In Touch</h3>
+                    <ul class=" mt-5 mb-6  text-gray-500">
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+                            <a href="#" class="ml-2">admin@mail.com</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                            </svg>
+                            <a href="#" class="ml-2">+123 456 789</a>
+                        </li>
+                        <li class="mb-3 hover:text-white  hover:translate-x-2 duration-500 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            <a href="#" class="ml-2">255 Sheet, City Name Home Land, NY</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+       
+    </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <!-- header -->
+    <script>
+        //fixed header
+        $(window).scroll(function(){
+         if($(this).scrollTop() >300){
+             $(".header").addClass("fixed-header");
+         }
+         else{
+             $(".header").removeClass("fixed-header");
+         }
+     });
+     //up to down 
+     $(".up-button").click(function(){
+            $('html, body').animate({scrollTop : 0},800);
+     });
+      //up-button
+     $(window).scroll(function(){
+         if($(this).scrollTop()){
+             $(".up-button").fadeIn();
+         }
+         else
+         {
+             $(".up-button").fadeOut();
+         }
+     });            
+ </script>
+ <!-- aos-animation -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+    AOS.init();
+  </script>
+</body>
+</html>
